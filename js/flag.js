@@ -119,6 +119,11 @@ function drawBG(flag) {
             }
             flag.appendChild(_genGenericSVG('path', polyamorous_path))
             break;
+        case 'aromantic':
+            for (const slice of _cascadeColorFlag(height, width, ['#3ca542', '#a8d377', '#fefefe', '#a9a9a9', '#000000'])) {
+                flag.appendChild(slice);
+            }
+            break;
         default:
             alert(`flag '${type}' not implemented`)
     }
