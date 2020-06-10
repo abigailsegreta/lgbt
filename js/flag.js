@@ -120,7 +120,12 @@ function drawBG(flag) {
             flag.appendChild(_genGenericSVG('path', polyamorous_path))
             break;
         case 'aromantic':
-            for (const slice of _cascadeColorFlag(height, width, ['#3ca542', '#a8d377', '#fefefe', '#a9a9a9', '#000000'])) {
+            for (const slice of _cascadeColorFlag(height, width, ['#3ca542', '#a8d377', '#ffffff', '#a9a9a9', '#000000'])) {
+                flag.appendChild(slice);
+            }
+            break;
+        case 'gaymale':
+            for (const slice of _cascadeColorFlag(height, width, ['#078e70', '#26ceaa', '#98e8c1', '#ffffff', '#7bade2', '#5049cb', '#3d1a78'])) {
                 flag.appendChild(slice);
             }
             break;
