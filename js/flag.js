@@ -332,6 +332,18 @@ function drawDecal(flag) {
     }
 }
 
+function drawBorder(flag) {
+    let borderThickness = _getVal('border_thickness');
+    let borderColor = _getVal('border_color');
+    const border_path = {
+        width: "510",
+        height: "300",
+        fill: "none",
+        style: `stroke-width: ${borderThickness}; stroke: ${borderColor}`
+    }
+    flag.appendChild(_genGenericSVG('rect', border_path))
+}
+
 function drawText(flag) {
     const texts = {
         top: {
@@ -380,6 +392,7 @@ function renderFlag() {
     _emptyFlag(flag);
     setFlagSize(flag);
     drawBG(flag);
+    drawBorder(flag);
     drawDecal(flag);
     drawText(flag);
 

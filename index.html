@@ -94,10 +94,7 @@
         <h3 class="low-margin hcenter">download <a id="svg_link" download="proposed_file_name">svg</a> | <a id="png_link">png</a></h3>
         <hr />
     </div>
-    <div class="input-container">
-        <label for="width">flag width: </label>
-        <input id="width" oninput="renderFlag();" type="range" step=".1" min=".1" max="5" value="1.6666" class="slider capture">
-    </div>
+    <div class="input-container"><label for="width">flag width: </label><input id="width" oninput="renderFlag();" type="range" step=".1" min=".1" max="5" value="1.6666" class="slider capture"></div>
     <div class="input-container">
         <label for="type">flag: </label>
         <select id="type" onchange="renderFlag();" class="capture">
@@ -121,6 +118,11 @@
             <option value="transgender">transgender</option>
         </select>
     </div>
+
+    <hr />
+
+    <div class="input-container"><label for="border_thickness">border thickness: </label><input id="border_thickness" oninput="renderFlag();" type="range" step=".2" min=".1" max="25" value="7" class="slider capture"></div>
+    <div class="input-container"><label for="border_color">border color: </label><input id="border_color" type="color" value="#000000" onchange="renderFlag();" class="capture"></div>
 
     <hr />
 
