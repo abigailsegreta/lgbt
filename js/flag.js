@@ -382,7 +382,7 @@ function drawBorder(flag) {
     let borderThickness = _getVal('border_thickness');
     let borderColor = _getVal('border_color');
     const border_path = {
-        width: "510",
+        width: flag.getAttribute('width'),
         height: "300",
         fill: "none",
         style: `stroke-width: ${borderThickness}; stroke: ${borderColor}`
