@@ -31,6 +31,52 @@ function drawBG(flag) {
                 flag.appendChild(slice);
             }
             break;
+        case 'bipoc-trans-rainbow':
+            for (const slice of _cascadeColorFlag(height, width, ['#e40303', '#ff8c00', '#ffed00', '#008026', '#004dff', '#750787'])) {
+                flag.appendChild(slice);
+            }
+
+            const black = {
+                d: "M0 -100 L 250 150 L0 400 Z",
+                fill: '#000000',
+                stroke: "none",
+                transform: "translate(30 0)"
+            }
+
+            const brown = {
+                d: "M0 -100 L 250 150 L0 400 Z",
+                fill: '#613914',
+                stroke: "none",
+                transform: "translate(-20 0)"
+            }
+
+            const blue = {
+                d: "M0 -100 L 250 150 L0 400 Z",
+                fill: '#74d8ef',
+                stroke: "none",
+                transform: "translate(-70 0)"
+            }
+
+            const pink = {
+                d: "M0 -100 L 250 150 L0 400 Z",
+                fill: '#ffb0c9',
+                stroke: "none",
+                transform: "translate(-120 0)"
+            }
+
+            const white = {
+                d: "M0 -100 L 250 150 L0 400 Z",
+                fill: '#ffffff',
+                stroke: "none",
+                transform: "translate(-170 0)"
+            }
+
+            flag.appendChild(_genGenericSVG('path', black))
+            flag.appendChild(_genGenericSVG('path', brown))
+            flag.appendChild(_genGenericSVG('path', blue))
+            flag.appendChild(_genGenericSVG('path', pink))
+            flag.appendChild(_genGenericSVG('path', white))
+            break;
         case 'asexual':
             for (const slice of _cascadeColorFlag(height, width, ['#000000', '#a3a3a3', '#ffff', '#800080'])) {
                 flag.appendChild(slice);
