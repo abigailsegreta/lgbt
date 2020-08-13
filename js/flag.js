@@ -436,11 +436,13 @@ function renderFlag() {
 
     const flag = document.getElementById('flag');
     _emptyFlag(flag);
+
+    // order matters; these are layered on top of each other
     setFlagSize(flag);
     drawBG(flag);
-    drawBorder(flag);
     drawDecal(flag);
     drawText(flag);
+    drawBorder(flag);
 
     setTitle();
 
