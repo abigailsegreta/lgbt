@@ -117,12 +117,14 @@
             <option value="pride-historic">historic pride(baker)</option>
             <option value="pride-philly">pride+poc (philly)</option>
             <option value="transgender">transgender</option>
+            <option value="triangle">pink triangle</option>
+            <option value="triangle-pride">pink triangle + pride</option>
         </select>
     </div>
 
     <hr />
 
-    <div class="input-container"><label for="border_thickness">border thickness: </label><input id="border_thickness" oninput="renderFlag();" type="range" step=".5" min=".1" max="50" value="7" class="slider capture"></div>
+    <div class="input-container"><label for="border_thickness">border thickness: </label><input id="border_thickness" oninput="renderFlag();" type="range" step=".5" min="0" max="50" value="7" class="slider capture"></div>
     <div class="input-container"><label for="border_color">border color: </label><input id="border_color" type="color" value="#000000" onchange="renderFlag();" class="capture"></div>
 
     <hr />
@@ -145,7 +147,8 @@
             <option value="raygun">ray gun</option>
             <option value="revolver">revolver</option>
             <option value="ridingcrop">riding crop</option>
-            <option value="rifle" selected>rifle</option>
+            <option value="rifle_ak" selected>ak-47 rifle</option>
+            <option value="rifle_sop" selected>sopmod rifle</option>
             <option value="skullcrossbones">skull and crossbones</option>
             <option value="shotgun">shotgun</option>
             <option value="starfleet">starfleet</option>

@@ -175,6 +175,31 @@ function drawBG(flag) {
                 flag.appendChild(slice);
             }
             break;
+            case 'triangle':
+                var triangleSide = 300;
+                var triangleHeight = Math.sqrt(3) * (triangleSide/2);
+                const triangle = {
+                    d: `M${triangleSide} 0 L ${triangleSide/2} ${triangleHeight} 0 0 Z`,
+                    fill: '#f6c',
+                    stroke: 'none',
+                    transform: `translate(${(width-triangleSide)/2} ${(height-triangleHeight)/2})`
+                }
+                flag.appendChild(_genGenericSVG('path', triangle))
+                break;
+        case 'triangle-pride':
+            for (const slice of _cascadeColorFlag(height, width, ['#e40303', '#ff8c00', '#ffed00', '#008026', '#004dff', '#750787'])) {
+                flag.appendChild(slice);
+            }
+            var triangleSide = 275;
+            var triangleHeight = Math.sqrt(3) * (triangleSide/2);
+            const trianglePride = {
+                d: `M${triangleSide} 0 L ${triangleSide/2} ${triangleHeight} 0 0 Z`,
+                fill: '#f6c',
+                stroke: 'none',
+                transform: `translate(${(width-triangleSide)/2} ${(height-triangleHeight)/2})`
+            }
+            flag.appendChild(_genGenericSVG('path', trianglePride))
+            break;
         default:
             alert(`flag '${type}' not implemented`)
     }
@@ -186,7 +211,7 @@ function drawDecal(flag) {
     switch (type) {
         case 'none':
             break;
-        case 'rifle':
+        case 'rifle_ak':
             // only update the values on initial load of decal type
             // otherwise we fight the user for the slider
             // initial load is indicated by the decal dropdown being in focus
@@ -195,8 +220,16 @@ function drawDecal(flag) {
                 _setVal('decal_size', 45);
                 _setVal('decal_color', '#000000')
             }
-            flag.appendChild(_genericDecalPosition(flag, decals.rifle));
+            flag.appendChild(_genericDecalPosition(flag, decals.rifle_ak));
             break;
+            case 'rifle_sop':
+                if (document.activeElement.id == 'decal'){
+                    _setVal('decal_outline', 2);
+                    _setVal('decal_size', 45);
+                    _setVal('decal_color', '#000000')
+                }
+                flag.appendChild(_genericDecalPosition(flag, decals.rifle_sop));
+                break;
         case 'shotgun':
             if (document.activeElement.id == 'decal'){
                 _setVal('decal_outline', 3);
